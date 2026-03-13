@@ -1,0 +1,1 @@
+console.log("Sudoku Online loaded");
