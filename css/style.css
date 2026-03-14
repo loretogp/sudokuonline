@@ -1,8 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin: 40px;
+  background: #f4f4f4;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  padding: 24px;
 }
 
 h1 {
-  color: #333;
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: #666;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+  border: 3px solid #222;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #999;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.cell:focus {
+  background: #eaf4ff;
+}
+
+.fixed {
+  background: #e9e9e9;
+  color: #111;
+}
+
+.editable {
+  background: #fff;
+  color: #1a4fb8;
+}
+
+.border-right {
+  border-right: 3px solid #222 !important;
+}
+
+.border-bottom {
+  border-bottom: 3px solid #222 !important;
+}
+
+@media (max-width: 560px) {
+  .sudoku-board {
+    grid-template-columns: repeat(9, 38px);
+    grid-template-rows: repeat(9, 38px);
+  }
+
+  .cell {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
 }
