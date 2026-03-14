@@ -117,3 +117,73 @@ button:hover {
     font-size: 1.6rem;
   }
 }
+
+.section-title {
+  margin: 0 0 16px;
+}
+
+.history-section {
+  margin-bottom: 32px;
+}
+
+.puzzle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto 16px;
+}
+
+.puzzle-item-button {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.puzzle-item-button:hover {
+  background: #f0f4ff;
+}
+
+.board-section {
+  margin-top: 10px;
+}
+
+.tag{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,255,234,.30);
+  box-shadow: 0 0 12px rgba(0,255,234,.18);
+  opacity:.92;
+  white-space:nowrap;
+}
+.tag.violet{
+  border-color: rgba(136,67,242,.34);
+  box-shadow: 0 0 12px rgba(136,67,242,.18);
+}
+  
+.link{
+  color: var(--text);
+  text-decoration:none;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:10px 12px;
+  border-radius: 14px;
+  border:1px solid rgba(255,255,255,.10);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.link:hover{
+  transform: translateY(-1px);
+  border-color: rgba(0,255,234,.35);
+  box-shadow: var(--glowC);
+}

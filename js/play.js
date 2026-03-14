@@ -1,33 +1,74 @@
+const puzzleList = document.getElementById("puzzle-list");
 const board = document.getElementById("board");
 const checkButton = document.getElementById("check-button");
 const message = document.getElementById("message");
+const currentPuzzleTitle = document.getElementById("current-puzzle-title");
 
 let currentPuzzle = null;
 let currentSolution = null;
 
-async function loadPuzzle() {
+async function loadPuzzleListing() {
   try {
-    const response = await fetch("data/daily-puzzle.json");
+    const response = await fetch("data/listing.json");
 
     if (!response.ok) {
-      throw new Error("No se pudo cargar el archivo JSON del puzzle.");
+      throw new Error("No se pudo cargar listing.json");
+    }
+
+    const data = await response.json();
+    renderPuzzleList(data.puzzles);
+  } catch (error) {
+    puzzleList.innerHTML = "<p>No se pudo cargar el listado de puzzles.</p>";
+    console.error(error);
+  }
+}
+
+function renderPuzzleList(puzzles) {
+  puzzleList.innerHTML = "";
+
+  if (!puzzles || puzzles.length === 0) {
+    puzzleList.innerHTML = "<p>No hay puzzles disponibles.</p>";
+    return;
+  }
+
+  puzzles.forEach((puzzleInfo) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.classList.add("puzzle-item-button");
+    button.textContent = puzzleInfo.title || puzzleInfo.id;
+
+    button.addEventListener("click", () => {
+      loadPuzzleFile(puzzleInfo.file, puzzleInfo.title || puzzleInfo.id);
+    });
+
+    puzzleList.appendChild(button);
+  });
+}
+
+async function loadPuzzleFile(filePath, title) {
+  try {
+    const response = await fetch(filePath);
+
+    if (!response.ok) {
+      throw new Error(`No se pudo cargar el puzzle: ${filePath}`);
     }
 
     const gameData = await response.json();
 
     currentPuzzle = gameData.puzzle;
     currentSolution = gameData.solution;
+    currentPuzzleTitle.textContent = title;
+    message.textContent = "";
 
     createBoard();
   } catch (error) {
-    message.textContent = "Error al cargar el Sudoku.";
+    message.textContent = "Error al cargar el tablero seleccionado.";
     console.error(error);
   }
 }
 
 function createBoard() {
   board.innerHTML = "";
-  message.textContent = "";
 
   for (let row = 0; row < 9; row++) {
     for (let col = 0; col < 9; col++) {
@@ -93,7 +134,7 @@ function validateCell(cell) {
 
 function validateBoard() {
   if (!currentSolution) {
-    message.textContent = "El puzzle aún no está cargado.";
+    message.textContent = "Primero debes seleccionar un tablero.";
     return;
   }
 
@@ -123,4 +164,4 @@ function validateBoard() {
 
 checkButton.addEventListener("click", validateBoard);
 
-loadPuzzle();
+loadPuzzleListing();

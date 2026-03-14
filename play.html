@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Play Sudoku</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku Online - Históricos</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
+  <main class="game-container">
+    <h1>Sudoku Online</h1>
+    <p class="subtitle">Tableros históricos</p>
 
-  <h1>Play Sudoku</h1>
+    <section class="history-section">
+      <h2 class="section-title">Selecciona un tablero</h2>
+      <div id="puzzle-list" class="puzzle-list"></div>
+      <a class="link" href="index.html">Volver al inicio ▸</a>
+    </section>
 
-  <div id="sudoku-board"></div>
+    <section class="board-section">
+      <h2 id="current-puzzle-title" class="section-title">Ningún tablero cargado</h2>
 
-  <script src="js/app.js"></script>
+      <div id="board" class="sudoku-board"></div>
 
+      <div class="actions">
+        <button id="check-button" type="button">Verificar</button>
+      </div>
+
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="js/play.js"></script>
 </body>
 </html>
