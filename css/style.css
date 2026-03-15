@@ -187,3 +187,49 @@ button:hover {
   border-color: rgba(0,255,234,.35);
   box-shadow: var(--glowC);
 }
+
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.site-header h1 {
+  margin-bottom: 16px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #1a4fb8;
+  font-weight: bold;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.content-page {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.content-page h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
