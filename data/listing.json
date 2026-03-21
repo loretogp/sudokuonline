@@ -1,6 +1,11 @@
 {
   "puzzles": [
     {
+      "id": "2026-03-19",
+      "title": "Sudoku 19-03-2026",
+      "file": "data/daily-puzzle-20260319.json"
+    },
+    {
       "id": "2026-03-18",
       "title": "Sudoku 18-03-2026",
       "file": "data/daily-puzzle-20260318.json"
