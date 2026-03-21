@@ -8,33 +8,30 @@ let currentPuzzle = null;
 let currentSolution = null;
 
 async function loadPuzzleListing() {
-//  console.log("entro a loadPuzzleListing");
-  try {
-    const response = await fetch("data/listing.json");
-//    console.log(response);
+  console.log("entro a loadPuzzleListing");
+/*  try {
+    const response = await fetch("../data/listing.json");
     if (!response.ok) {
       throw new Error("No se pudo cargar listing.json");
     }
-
     const data = await response.json();
-//    console.log("va a entrar a renderPuzzleList");
+    console.log("va a entrar a renderPuzzleList");
     renderPuzzleList(data.puzzles);
   } catch (error) {
     puzzleList.innerHTML = "<p>No se pudo cargar el listado de puzzles.</p>";
     console.error(error);
-  }
-  //console.log("sale loadPuzzleListing");
+  }*/
+  console.log("sale loadPuzzleListing");
 }
 
 function renderPuzzleList(puzzles) {
-  //console.log("entro a renderPuzzleList");
+  console.log("entro a renderPuzzleList");
   puzzleList.innerHTML = "";
 
   if (!puzzles || puzzles.length === 0) {
     puzzleList.innerHTML = "<p>No hay puzzles disponibles.</p>";
     return;
   }
-
   puzzles.forEach((puzzleInfo) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -58,8 +55,8 @@ function renderPuzzleList(puzzles) {
 
 async function loadPuzzleFile(filePath, title) {
   try {
-    //console.log("entro a loadPuzzleFile");
-    //console.log(filePath);
+    console.log("entro a loadPuzzleFile");
+    console.log(filePath);
     const response = await fetch(filePath);
 
     if (!response.ok) {
@@ -72,7 +69,7 @@ async function loadPuzzleFile(filePath, title) {
     currentSolution = gameData.solution;
     currentPuzzleTitle.textContent = title;
     message.textContent = "";
-    //console.log("va a entrar a createBoard");
+    console.log("va a entrar a createBoard");
     createBoard();
   } catch (error) {
     message.textContent = "Error al cargar el tablero seleccionado.";
@@ -81,7 +78,7 @@ async function loadPuzzleFile(filePath, title) {
 }
 
 function createBoard() {
-  //console.log("entro a createBoard");
+  console.log("entro a createBoard");
   board.innerHTML = "";
 
   for (let row = 0; row < 9; row++) {
