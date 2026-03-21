@@ -35,10 +35,17 @@ function renderPuzzleList(puzzles) {
     const button = document.createElement("button");
     button.type = "button";
     button.classList.add("puzzle-item-button");
-    button.textContent = puzzleInfo.title || puzzleInfo.id;
+    button.innerHTML = `
+      <div>${puzzleInfo.title || puzzleInfo.id}</div>
+    `;
 
-    button.addEventListener("click", () => {
-      loadPuzzleFile(puzzleInfo.file, puzzleInfo.title || puzzleInfo.id);
+    button.addEventListener("click", async () => {
+      document.querySelectorAll(".puzzle-item-button").forEach(item => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+      await loadPuzzleFile(puzzleInfo.file, puzzleInfo.title || puzzleInfo.id);
     });
 
     puzzleList.appendChild(button);

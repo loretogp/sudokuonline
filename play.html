@@ -36,13 +36,17 @@
     </header>
     <p class="subtitle">Tableros históricos</p>
 
-    <section class="history-section">
-      <h2 class="section-title">Selecciona un tablero</h2>
+<section class="play-layout">
+  
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="history-section">
+      <h2 class="section-title">Archivo de Sudokus</h2>
       <div id="puzzle-list" class="puzzle-list"></div>
-    </section>
+    </div>
 
-    <section class="board-section">
-      <h2 id="current-puzzle-title" class="section-title">Ningún tablero cargado</h2>
+    <!-- COLUMNA DERECHA -->
+    <div class="board-section">
+      <h2 id="current-puzzle-title" class="section-title">Selecciona un tablero</h2>
 
       <div id="board" class="sudoku-board"></div>
 
@@ -51,7 +55,9 @@
       </div>
 
       <p id="message" class="message"></p>
-    </section>
+    </div>
+
+  </section>
   </main>
 
   <script src="js/play.js"></script>
