@@ -1,6 +1,51 @@
 {
   "puzzles": [
     {
+      "id": "2026-03-28",
+      "title": "Sudoku 28-03-2026",
+      "file": "data/daily-puzzle-20260328.json"
+    },
+    {
+      "id": "2026-03-27",
+      "title": "Sudoku 20-03-2027",
+      "file": "data/daily-puzzle-20260327.json"
+    },
+    {
+      "id": "2026-03-26",
+      "title": "Sudoku 26-03-2026",
+      "file": "data/daily-puzzle-20260326.json"
+    },
+    {
+      "id": "2026-03-25",
+      "title": "Sudoku 25-03-2026",
+      "file": "data/daily-puzzle-20260325.json"
+    },
+    {
+      "id": "2026-03-24",
+      "title": "Sudoku 24-03-2026",
+      "file": "data/daily-puzzle-20260324.json"
+    },
+    {
+      "id": "2026-03-23",
+      "title": "Sudoku 23-03-2026",
+      "file": "data/daily-puzzle-20260323.json"
+    },
+    {
+      "id": "2026-03-22",
+      "title": "Sudoku 22-03-2026",
+      "file": "data/daily-puzzle-20260322.json"
+    },
+    {
+      "id": "2026-03-21",
+      "title": "Sudoku 21-03-2026",
+      "file": "data/daily-puzzle-20260321.json"
+    },
+    {
+      "id": "2026-03-20",
+      "title": "Sudoku 20-03-2026",
+      "file": "data/daily-puzzle-20260320.json"
+    },
+    {
       "id": "2026-03-19",
       "title": "Sudoku 19-03-2026",
       "file": "data/daily-puzzle-20260319.json"
