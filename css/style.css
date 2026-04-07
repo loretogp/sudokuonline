@@ -281,3 +281,14 @@ button:hover {
   border-color: #333;
   font-weight: 700;
 }
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.instagram-media {
+  width: 100% !important;
+}
