@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sudoku 05 de Abril de 2026 | Sudoku Online</title>
-  <meta name="description" content="Juega el Sudoku del 05 de Abril de 2026. Puzzle diario gratis para entrenar tu lógica.">
+  <title>Sudoku 06 de Abril de 2026 | Sudoku Online</title>
+  <meta name="description" content="Juega el Sudoku del 06 de Abril de 2026. Puzzle diario gratis para entrenar tu lógica.">
 
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
@@ -21,13 +21,60 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-5QC1LB2EF8');
-    window.location.href = "https://sudokuonline.cl";
   </script>
 </head>
 
 <body>
-  <p>Si no eres redirigido automáticamente, 
-     <a href="https://sudokuonline.cl">haz clic aquí</a>.
-  </p>
+  <main class="page-container">
+
+    <!-- HEADER GLOBAL -->
+    <header class="site-header">
+      <p class="site-title">Sudoku Online</p>
+      <nav class="site-nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../play.html">Antiguos</a>
+        <a href="../sudoku-rules.html">Reglas</a>
+        <a href="../about.html">Nosotros</a>
+        <a href="../privacy.html">Privacidad</a>
+        <a href="../contact.html">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="content-page">
+
+      <h1 id="current-puzzle-title" class="section-title">Tablero</h1>
+
+      <p>
+        Resuelve el Sudoku del día 06 de Abril de 2026. <br>
+        Este puzzle es ideal para practicar lógica y concentración.
+      </p>
+
+      <!-- TABLERO -->
+      <div id="board" class="sudoku-board"></div>
+
+      <div class="actions">
+        <button id="check-button">Verificar</button>
+      </div>
+
+      <p id="message"></p>
+
+      <!-- NAVEGACIÓN ENTRE PUZZLES -->
+      <div class="puzzle-navigation">
+        <a href="2026-04-05.html">← Sudoku anterior</a>
+        <a href="../play.html">Ver archivo</a>
+        <a href="2026-04-07.html">Siguiente sudoku →</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- reutilizamos tu lógica existente -->
+  <script src="../js/play.js"></script>
+  <script>
+    // Carga automática del JSON correspondiente
+    loadPuzzleFile("../data/daily-puzzle-20260406.json", "Sudoku 06-04-2026");
+  </script>
+
 </body>
 </html>
