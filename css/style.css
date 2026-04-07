@@ -292,3 +292,9 @@ button:hover {
 .instagram-media {
   width: 100% !important;
 }
+
+.about-author {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
