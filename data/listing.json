@@ -1,6 +1,36 @@
 {
   "puzzles": [
     {
+      "date": "2026-08-17",
+      "difficulty": "dificil",
+      "difficulty_label": "Difícil",
+      "difficulty_order": 2,
+      "clues": 26,
+      "title": "Sudoku Difícil — 17 de agosto de 2026",
+      "page": "sudokus/2026-08-17-dificil.html",
+      "data_file": "data/202608/daily-puzzle-20260817-dificil.json"
+    },
+    {
+      "date": "2026-08-17",
+      "difficulty": "medio",
+      "difficulty_label": "Medio",
+      "difficulty_order": 1,
+      "clues": 32,
+      "title": "Sudoku Medio — 17 de agosto de 2026",
+      "page": "sudokus/2026-08-17-medio.html",
+      "data_file": "data/202608/daily-puzzle-20260817-medio.json"
+    },
+    {
+      "date": "2026-08-17",
+      "difficulty": "facil",
+      "difficulty_label": "Fácil",
+      "difficulty_order": 0,
+      "clues": 42,
+      "title": "Sudoku Fácil — 17 de agosto de 2026",
+      "page": "sudokus/2026-08-17-facil.html",
+      "data_file": "data/202608/daily-puzzle-20260817-facil.json"
+    },
+    {
       "date": "2026-08-16",
       "difficulty": "dificil",
       "difficulty_label": "Difícil",
