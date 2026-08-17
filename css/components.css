@@ -1,0 +1,128 @@
+/* Reusable UI pieces: buttons, archive listing, tags. */
+
+button {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background: var(--color-primary-dark);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-3);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.tag.facil { background: var(--color-facil-bg); color: var(--color-facil); }
+.tag.medio { background: var(--color-medio-bg); color: var(--color-medio); }
+.tag.dificil { background: var(--color-dificil-bg); color: var(--color-dificil); }
+
+/* Home page difficulty tabs */
+.difficulty-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.tab-button {
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+}
+
+.tab-button:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.tab-button.active {
+  background: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* Archive (play.html) */
+.archive-month {
+  margin-bottom: var(--space-5);
+}
+
+.archive-month-title {
+  font-size: 1.15rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.archive-day-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.archive-day {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+}
+
+.archive-date {
+  font-weight: 700;
+  min-width: 90px;
+}
+
+.archive-links {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.puzzle-item-button {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+}
+
+.puzzle-item-button:hover {
+  text-decoration: none;
+  border-color: var(--color-primary);
+}
+
+.puzzle-item-button.difficulty-facil { color: var(--color-facil); background: var(--color-facil-bg); }
+.puzzle-item-button.difficulty-medio { color: var(--color-medio); background: var(--color-medio-bg); }
+.puzzle-item-button.difficulty-dificil { color: var(--color-dificil); background: var(--color-dificil-bg); }
+
+.empty-archive {
+  color: var(--color-text-muted);
+}

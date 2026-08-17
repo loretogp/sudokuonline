@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aprende las reglas del Sudoku y descubre cómo jugar paso a paso. Guía básica para principiantes en Sudoku Online.">
-  <title>Sudoku Online - Reglas del Sudoku</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reglas del Sudoku — Cómo se juega | Sudoku Online</title>
+  <meta name="description" content="Aprende las reglas del sudoku desde cero: cómo se organiza el tablero, qué significan las filas, columnas y cajas, y los errores más comunes al empezar.">
+  <link rel="canonical" href="https://sudokuonline.cl/sudoku-rules.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reglas del Sudoku — Cómo se juega">
+  <meta property="og:description" content="Aprende las reglas del sudoku desde cero: filas, columnas, cajas y errores comunes.">
+  <meta property="og:url" content="https://sudokuonline.cl/sudoku-rules.html">
+  <meta property="og:locale" content="es_CL">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/board.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/content.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710"
-     crossorigin="anonymous"></script>
-
-  <!-- Google Analytics -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-5QC1LB2EF8');
   </script>
 </head>
 <body>
-  <main class="page-container">
-    <header class="site-header">
-      <h1>Sudoku Online</h1>
-      <nav class="site-nav">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Sudoku Online</a>
+      <nav class="site-nav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="play.html">Antiguos</a>
-        <a href="sudoku-rules.html">Reglas</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html" aria-current="page">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">Nosotros</a>
-        <a href="privacy.html">Privacidad</a>
         <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
       </nav>
-    </header>
-
+    </div>
+  </header>
+  <main class="page-container">
     <section class="content-page">
-<h1>Reglas del Sudoku – Cómo jugar Sudoku</h1>
+      <h1 class="section-title">Reglas del Sudoku</h1>
+      <p class="lead">El sudoku es un rompecabezas de lógica pura: no requiere matemáticas ni azar, solo deducción. Estas son las reglas completas, explicadas paso a paso.</p>
 
-<p>El Sudoku es un juego de lógica basado en números que se juega en una cuadrícula de 9x9. El objetivo es completar la cuadrícula de manera que cada fila, cada columna y cada subcuadro de 3x3 contengan los números del 1 al 9 sin repetir.</p>
+      <h2>El tablero</h2>
+      <p>El tablero es una grilla de 9x9 celdas, dividida en 9 "cajas" de 3x3 (también llamadas regiones o bloques). Algunas celdas ya vienen con un número —las "pistas" o "fijas"— y el resto están vacías, esperando ser completadas.</p>
 
-<h2>Reglas básicas</h2>
+      <h2>El objetivo</h2>
+      <p>Completar todas las celdas vacías con números del 1 al 9, cumpliendo estas tres reglas al mismo tiempo:</p>
+      <ol>
+        <li><strong>Cada fila</strong> (horizontal) debe contener los números del 1 al 9, sin repetir ninguno.</li>
+        <li><strong>Cada columna</strong> (vertical) debe contener los números del 1 al 9, sin repetir ninguno.</li>
+        <li><strong>Cada caja de 3x3</strong> debe contener los números del 1 al 9, sin repetir ninguno.</li>
+      </ol>
+      <p>Un sudoku bien construido tiene exactamente <strong>una única solución posible</strong>: nunca hace falta adivinar si el tablero está bien diseñado (todos los que genera este sitio se verifican automáticamente para cumplir esta condición).</p>
 
-<ul>
-  <li>Cada fila debe contener los números del 1 al 9 sin repetirse.</li>
-  <li>Cada columna debe contener los números del 1 al 9 sin repetirse.</li>
-  <li>Cada subcuadro de 3x3 debe contener los números del 1 al 9 sin repetirse.</li>
-</ul>
+      <h2>Cómo empezar</h2>
+      <p>No hay un orden obligatorio, pero la forma más simple de empezar es buscar filas, columnas o cajas que ya tengan muchos números: ahí quedan menos posibilidades para las celdas vacías, y es más fácil deducir qué número falta.</p>
 
-<h2>Cómo empezar</h2>
+      <h2>Errores comunes al empezar</h2>
+      <ul>
+        <li>Repetir un número dentro de la misma fila, columna o caja: es la única forma real de "perder" en sudoku.</li>
+        <li>Adivinar en vez de deducir: si no estás seguro, es mejor buscar otra celda más obvia antes que arriesgar.</li>
+        <li>Ignorar las cajas: es fácil concentrarse solo en filas y columnas y olvidar revisar la caja de 3x3.</li>
+      </ul>
+      <p>Cuando quieras ir más allá de lo básico, revisa nuestra <a href="tecnicas.html">guía de técnicas y estrategias</a> con métodos que usan los jugadores avanzados.</p>
 
-<p>Cada puzzle de Sudoku comienza con algunos números ya completados. Estos números sirven como pistas para resolver el resto del tablero.</p>
-
-<p>Debes usar la lógica para determinar dónde van los números faltantes. Cada puzzle tiene una única solución correcta.</p>
-
-<h2>Consejos para principiantes</h2>
-
-<ul>
-  <li>Comienza por filas, columnas o bloques que ya tengan varios números.</li>
-  <li>Busca números que solo puedan ir en una posición.</li>
-  <li>Evita adivinar: el Sudoku está diseñado para resolverse con lógica.</li>
-</ul>
-
-<h2>Jugar Sudoku online</h2>
-
-<p>Puedes jugar un nuevo Sudoku cada día en nuestro sitio. Desafía tu mente y mejora tus habilidades de lógica con cada puzzle.</p>
-<p><a href="index.html">Ir a jugar Sudoku</a></p>    
-</section>
-
-    
+      <p><a href="index.html">Jugar el sudoku de hoy &rarr;</a></p>
+    </section>
   </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Sudoku Online</p>
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <a href="index.html">Inicio</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+      <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
+      <p class="footer-copy">&copy; 2026 Sudoku Online (sudokuonline.cl)</p>
+    </div>
+  </footer>
 </body>
 </html>

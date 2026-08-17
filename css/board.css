@@ -1,0 +1,129 @@
+/* The sudoku grid itself, plus the difficulty switcher above it. */
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: min(100%, 468px);
+  aspect-ratio: 1 / 1;
+  margin: var(--space-4) auto;
+  background: var(--color-surface);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0;
+}
+
+.cell.border-right {
+  border-right: 2px solid var(--color-text);
+}
+
+.cell.border-bottom {
+  border-bottom: 2px solid var(--color-text);
+}
+
+.cell.fixed {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.cell.editable {
+  color: var(--color-primary-dark);
+}
+
+.cell.editable:focus {
+  background: #eaf0ff;
+}
+
+.cell.correct {
+  background: var(--color-correct-bg);
+  color: var(--color-correct);
+}
+
+.cell.incorrect {
+  background: var(--color-incorrect-bg);
+  color: var(--color-incorrect);
+}
+
+.actions {
+  margin: var(--space-4) 0;
+}
+
+.message {
+  min-height: 1.5em;
+  font-weight: 600;
+}
+
+.puzzle-meta {
+  color: var(--color-text-muted);
+}
+
+.difficulty-switch {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin: var(--space-3) 0;
+}
+
+.difficulty-pill {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.difficulty-pill.difficulty-facil { color: var(--color-facil); }
+.difficulty-pill.difficulty-medio { color: var(--color-medio); }
+.difficulty-pill.difficulty-dificil { color: var(--color-dificil); }
+
+.difficulty-pill.active.difficulty-facil { background: var(--color-facil-bg); border-color: var(--color-facil); }
+.difficulty-pill.active.difficulty-medio { background: var(--color-medio-bg); border-color: var(--color-medio); }
+.difficulty-pill.active.difficulty-dificil { background: var(--color-dificil-bg); border-color: var(--color-dificil); }
+
+.puzzle-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.puzzle-nav-link {
+  font-weight: 600;
+}
+
+.puzzle-nav-link.disabled {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+@media (max-width: 560px) {
+  .sudoku-board {
+    width: 100%;
+  }
+
+  .cell {
+    font-size: 0.95rem;
+  }
+}

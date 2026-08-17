@@ -1,0 +1,122 @@
+/* Header, footer and page-level layout shared by every page. */
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.site-brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.site-brand:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+}
+
+.site-nav a {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: var(--space-1) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.page-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+  min-height: 60vh;
+}
+
+.game-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+}
+
+.site-footer {
+  background: var(--color-text);
+  color: #c7cce0;
+  margin-top: var(--space-6);
+}
+
+.footer-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.footer-brand {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.footer-nav a {
+  color: #c7cce0;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+.footer-note {
+  color: #98a0bb;
+  font-size: 0.85rem;
+  max-width: 480px;
+  margin-bottom: var(--space-2);
+}
+
+.footer-copy {
+  color: #7d84a0;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

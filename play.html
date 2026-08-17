@@ -1,104 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explora el archivo de sudokus históricos y juega puzzles anteriores en Sudoku Online.">
-  <title>Sudoku Online - Archivo de Sudokus</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivo de Sudokus | Sudoku Online</title>
+  <meta name="description" content="Revisa y juega cualquier sudoku publicado anteriormente en Sudoku Online, organizado por mes y nivel de dificultad.">
+  <link rel="canonical" href="https://sudokuonline.cl/play.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Archivo de Sudokus | Sudoku Online">
+  <meta property="og:description" content="Revisa y juega cualquier sudoku publicado anteriormente en Sudoku Online, organizado por mes y nivel de dificultad.">
+  <meta property="og:url" content="https://sudokuonline.cl/play.html">
+  <meta property="og:locale" content="es_CL">
+  <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/content.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710"
-     crossorigin="anonymous"></script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5QC1LB2EF8');
-  </script>
+  
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-5QC1LB2EF8');
+    </script>
+  
 </head>
 <body>
-  <main class="page-container">
-    <header class="site-header">
-      <h1>Sudoku Online</h1>
-      <nav class="site-nav">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Sudoku Online</a>
+      <nav class="site-nav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="play.html">Antiguos</a>
+        <a href="play.html" aria-current="page">Archivo</a>
         <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">Nosotros</a>
-        <a href="privacy.html">Privacidad</a>
         <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
       </nav>
-    </header>
-
+    </div>
+  </header>
+  <main class="page-container">
     <section class="content-page">
-      <h2>Archivo de Sudokus</h2>
-      <p>Explora los sudokus anteriores y juega cualquier puzzle disponible del archivo.</p>
-      <table>
-        <tr>
-          <td style="text-align: center;">
-            Abril
-          </td>
-          <td style="text-align: center;">
-            Marzo
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align: top;">
-            <div class="puzzle-list" id="puzzle-list-2026-04">
-                                                                                                                <a class="puzzle-item-button" href="sudokus/2026-04-08.html">Sudoku 04-08-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-07.html">Sudoku 04-07-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-06.html">Sudoku 04-06-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-05.html">Sudoku 04-05-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-04.html">Sudoku 04-04-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-03.html">Sudoku 04-03-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-02.html">Sudoku 04-02-2026</a>
-<a class="puzzle-item-button" href="sudokus/2026-04-01.html">Sudoku 04-01-2026</a>
+      <h1 class="section-title">Archivo de Sudokus</h1>
+      <p>Todos los tableros publicados, organizados por mes. Cada día se agregan tres niveles nuevos: Fácil, Medio y Difícil.</p>
+      <div class="archive">
+      <div class="archive-month">
+        <h3 class="archive-month-title">Agosto 2026</h3>
+        <ul class="archive-day-list">
+          <li class="archive-day">
+            <span class="archive-date">16-08-2026</span>
+            <div class="archive-links">
+              <a class="puzzle-item-button difficulty-facil" href="sudokus/2026-08-16-facil.html">Fácil</a>
+              <a class="puzzle-item-button difficulty-medio" href="sudokus/2026-08-16-medio.html">Medio</a>
+              <a class="puzzle-item-button difficulty-dificil" href="sudokus/2026-08-16-dificil.html">Difícil</a>
             </div>
-          </td>
-          <td style="vertical-align: top;">
-            <div class="puzzle-list" id="puzzle-list-2026-03">
-              <a class="puzzle-item-button" href="sudokus/2026-03-28.html">Sudoku 28-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-27.html">Sudoku 27-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-26.html">Sudoku 26-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-25.html">Sudoku 25-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-24.html">Sudoku 24-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-23.html">Sudoku 23-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-22.html">Sudoku 22-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-21.html">Sudoku 21-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-20.html">Sudoku 20-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-19.html">Sudoku 19-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-18.html">Sudoku 18-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-17.html">Sudoku 17-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-16.html">Sudoku 16-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-15.html">Sudoku 15-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-14.html">Sudoku 14-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-13.html">Sudoku 13-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-12.html">Sudoku 12-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-11.html">Sudoku 11-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-10.html">Sudoku 10-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-09.html">Sudoku 09-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-08.html">Sudoku 08-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-07.html">Sudoku 07-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-06.html">Sudoku 06-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-05.html">Sudoku 05-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-04.html">Sudoku 04-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-03.html">Sudoku 03-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-02.html">Sudoku 02-03-2026</a>
-              <a class="puzzle-item-button" href="sudokus/2026-03-01.html">Sudoku 01-03-2026</a>
-            </div>
-          </td>
-        </tr>
-      </table>
-
-
-
-
+          </li>
+        </ul>
+      </div>
+      </div>
     </section>
   </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Sudoku Online</p>
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <a href="index.html">Inicio</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+      <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
+      <p class="footer-copy">&copy; 2026 Sudoku Online (sudokuonline.cl)</p>
+    </div>
+  </footer>
 </body>
 </html>

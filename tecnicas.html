@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas y Estrategias para Resolver Sudoku | Sudoku Online</title>
+  <meta name="description" content="Guía práctica de técnicas de sudoku: escaneo, single oculto, pares y tríos, pointing pairs, box-line reduction y una introducción al X-Wing.">
+  <link rel="canonical" href="https://sudokuonline.cl/tecnicas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Técnicas y Estrategias para Resolver Sudoku">
+  <meta property="og:description" content="Guía práctica de técnicas de sudoku, desde el escaneo básico hasta el X-Wing.">
+  <meta property="og:url" content="https://sudokuonline.cl/tecnicas.html">
+  <meta property="og:locale" content="es_CL">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/board.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5QC1LB2EF8');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Sudoku Online</a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html" aria-current="page">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-container">
+    <section class="content-page">
+      <h1 class="section-title">Técnicas y estrategias para resolver sudoku</h1>
+      <p class="lead">Si ya conoces las <a href="sudoku-rules.html">reglas básicas</a>, estas son las técnicas que te permiten resolver tableros de nivel Medio y Difícil sin adivinar.</p>
+
+      <div class="technique-card">
+        <h3>1. Escaneo por filas, columnas y cajas</h3>
+        <p>Es la técnica más básica: para un número dado, revisa qué filas, columnas y cajas ya lo contienen. Por descarte, muchas veces solo queda una celda posible en una caja para ese número.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>2. Single oculto (hidden single)</h3>
+        <p>En una caja, fila o columna, si un número solo puede ir en una celda posible —aunque esa celda tenga otros candidatos también posibles— ese número va ahí. Es distinto del "single desnudo", donde la celda solo tiene un candidato en total.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>3. Pares y tríos desnudos (naked pairs/triples)</h3>
+        <p>Si dos celdas de la misma fila, columna o caja solo pueden contener los mismos dos números (por ejemplo, ambas solo admiten 4 u 8), esos dos números no pueden aparecer en ninguna otra celda de ese grupo. Lo mismo aplica con tres celdas y tres números.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>4. Pares y tríos ocultos (hidden pairs/triples)</h3>
+        <p>Al revés que el anterior: si dos números solo pueden ubicarse en las mismas dos celdas de un grupo, esas celdas no pueden contener ningún otro candidato, aunque tengan más candidatos anotados.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>5. Pointing pairs / pointing triples</h3>
+        <p>Si dentro de una caja, todos los candidatos posibles de un número caen en la misma fila o columna, ese número puede eliminarse como candidato del resto de esa fila o columna fuera de la caja.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>6. Box-line reduction</h3>
+        <p>Es el caso inverso al anterior: si en una fila o columna, todos los candidatos posibles de un número caen dentro de una misma caja, ese número puede eliminarse como candidato del resto de esa caja.</p>
+      </div>
+
+      <div class="technique-card">
+        <h3>7. X-Wing (nivel avanzado)</h3>
+        <p>Cuando un número tiene exactamente dos celdas candidatas posibles en cada una de dos filas distintas, y esas celdas caen en las mismas dos columnas, se forma una "X". Ese número puede eliminarse como candidato del resto de esas dos columnas. Es más avanzado, pero muy útil en tableros de nivel Difícil.</p>
+      </div>
+
+      <p>La mejor forma de interiorizar estas técnicas es practicarlas: prueba el <a href="index.html">tablero de hoy</a> en nivel Medio o Difícil, o explora el <a href="play.html">archivo completo</a> de tableros anteriores.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Sudoku Online</p>
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <a href="index.html">Inicio</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+      <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
+      <p class="footer-copy">&copy; 2026 Sudoku Online (sudokuonline.cl)</p>
+    </div>
+  </footer>
+</body>
+</html>

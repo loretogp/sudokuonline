@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Juega Sudoku online gratis. Nuevo puzzle todos los días y archivo de sudokus históricos.">
-  <title>Sudoku Online</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Online — Sudoku gratis nuevo cada día</title>
+  <meta name="description" content="Juega sudoku gratis todos los días, en tres niveles de dificultad (Fácil, Medio, Difícil). Tableros nuevos generados y verificados automáticamente cada mañana.">
+  <link rel="canonical" href="https://sudokuonline.cl/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sudoku Online — Sudoku gratis nuevo cada día">
+  <meta property="og:description" content="Juega sudoku gratis todos los días, en tres niveles de dificultad. Sin registro, directo en el navegador.">
+  <meta property="og:url" content="https://sudokuonline.cl/">
+  <meta property="og:locale" content="es_CL">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/board.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/content.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710"
-     crossorigin="anonymous"></script>
-
-  <!-- Google Analytics -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-5QC1LB2EF8');
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sudoku Online",
+    "url": "https://sudokuonline.cl/",
+    "description": "Sudoku gratis nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente."
+  }
+  </script>
+  <script type="module" src="js/home.js"></script>
 </head>
 <body>
-  <main class="game-container">
-    <header class="site-header">
-      <h1>Sudoku Online</h1>
-      <nav class="site-nav">
-        <a href="index.html">Inicio</a>
-        <a href="play.html">Antiguos</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Sudoku Online</a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="play.html">Archivo</a>
         <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">Nosotros</a>
-        <a href="privacy.html">Privacidad</a>
         <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
       </nav>
-    </header>
+    </div>
+  </header>
+  <main class="game-container">
     <p class="subtitle">Tablero del día</p>
-
+    <div id="difficulty-tabs" class="difficulty-tabs" role="tablist" aria-label="Nivel de dificultad"></div>
     <div id="board" class="sudoku-board"></div>
-
     <div class="actions">
       <button id="check-button" type="button">Verificar</button>
     </div>
-    <p id="message" class="message"></p>
+    <p id="message" class="message" role="status"></p>
+    <p><a href="play.html">Ver el archivo completo de sudokus &rarr;</a></p>
   </main>
-
-  <script src="js/script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Sudoku Online</p>
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <a href="index.html">Inicio</a>
+        <a href="play.html">Archivo</a>
+        <a href="sudoku-rules.html">Reglas</a>
+        <a href="tecnicas.html">Técnicas</a>
+        <a href="historia.html">Historia</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">Nosotros</a>
+        <a href="contact.html">Contacto</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+      <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
+      <p class="footer-copy">&copy; 2026 Sudoku Online (sudokuonline.cl)</p>
+    </div>
+  </footer>
 </body>
 </html>

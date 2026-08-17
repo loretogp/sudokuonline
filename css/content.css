@@ -1,0 +1,90 @@
+/* Long-form content pages: reglas, técnicas, historia, faq, about, etc. */
+
+.content-page h2 {
+  font-size: 1.3rem;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.content-page h3 {
+  font-size: 1.1rem;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-1);
+}
+
+.content-page ul,
+.content-page ol {
+  margin: 0 0 var(--space-3);
+  padding-left: 1.4em;
+}
+
+.content-page li {
+  margin-bottom: var(--space-1);
+}
+
+.content-page .lead {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.technique-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.technique-card h3 {
+  margin-top: 0;
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq-item[open] summary {
+  margin-bottom: var(--space-2);
+}
+
+.about-author {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.instagram-media {
+  margin: 0 !important;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+.contact-methods a {
+  font-weight: 600;
+}
