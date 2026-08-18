@@ -1,0 +1,134 @@
+<!--
+  BANNER DE CONSENTIMIENTO DE COOKIES + GOOGLE CONSENT MODE V2
+  ==============================================================
+  Qué hace esto:
+  - Por defecto, deniega analytics_storage y ad_storage (así Google
+    Analytics y AdSense no personalizan ni miden nada hasta que el
+    usuario acepta). Esto es lo que exige la "EU User Consent Policy"
+    de Google para visitantes de la UE/EEE/Reino Unido.
+  - Muestra un banner simple la primera vez que alguien entra al sitio.
+  - Si acepta, actualiza el consentimiento a "granted" y guarda la
+    elección en localStorage para no volver a preguntar.
+  - Si rechaza, deja todo denegado (solo cookies necesarias).
+  - Incluye un enlace "Configurar cookies" que puedes poner en el
+    footer para que el usuario cambie de opinión después.
+
+  DÓNDE PEGARLO:
+  1) El bloque <script> de "Consent Mode defaults" debe ir en el <head>,
+     ANTES de cualquier script de Google Analytics (gtag.js) o AdSense.
+  2) El HTML del banner (<div id="cookie-banner">...) y el segundo
+     <script> pueden ir justo antes de </body>.
+
+  IMPORTANTE:
+  Esto es un punto de partida funcional y liviano para un sitio chico.
+  Si en el futuro el sitio recibe tráfico significativo desde la UE/UK,
+  o quieres blindarte legalmente al 100%, lo más seguro a largo plazo es
+  reemplazar este banner casero por un CMP certificado por Google (por
+  ejemplo CookieYes, Cookiebot o iubenda, todos con planes gratuitos
+  para sitios pequeños) — se integran solos con Consent Mode y quedan
+  en la lista oficial de Google de proveedores aceptados.
+-->
+
+<!-- 1) EN EL <head>, ANTES de gtag.js / AdSense -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Consentimiento denegado por defecto hasta que el usuario decida
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
+
+<!-- Aquí van tus scripts normales de Google Analytics y AdSense, sin cambios -->
+
+
+<!-- 2) ANTES de </body> -->
+<div id="cookie-banner" style="
+  display:none;
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:9999;
+  background:#1f1f1f;
+  color:#fff;
+  padding:16px 20px;
+  font-family:sans-serif;
+  font-size:14px;
+  line-height:1.5;
+  box-shadow:0 -2px 10px rgba(0,0,0,.2);
+">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+    <span>
+      Usamos cookies propias y de terceros (Google Analytics y Google AdSense)
+      para analizar el uso del sitio y mostrar anuncios, incluyendo
+      personalizados si lo aceptas. Puedes leer más en nuestra
+      <a href="/privacy.html" style="color:#8ab4f8;">Política de Privacidad</a>.
+    </span>
+    <span style="display:flex;gap:8px;flex-shrink:0;">
+      <button id="cookie-reject" style="padding:8px 14px;border:1px solid #fff;background:transparent;color:#fff;border-radius:4px;cursor:pointer;">
+        Rechazar
+      </button>
+      <button id="cookie-accept" style="padding:8px 14px;border:none;background:#8ab4f8;color:#1f1f1f;border-radius:4px;cursor:pointer;font-weight:bold;">
+        Aceptar
+      </button>
+    </span>
+  </div>
+</div>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'cookie_consent_v1';
+
+  function applyConsent(granted) {
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
+  }
+
+  function showBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  function hideBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  var saved = localStorage.getItem(STORAGE_KEY);
+
+  if (saved === 'granted') {
+    applyConsent(true);
+  } else if (saved === 'denied') {
+    applyConsent(false);
+  } else {
+    showBanner();
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    localStorage.setItem(STORAGE_KEY, 'granted');
+    applyConsent(true);
+    hideBanner();
+  });
+
+  document.getElementById('cookie-reject').addEventListener('click', function () {
+    localStorage.setItem(STORAGE_KEY, 'denied');
+    applyConsent(false);
+    hideBanner();
+  });
+
+  // Enlace opcional en el footer con id="cookie-settings-link"
+  // para que el usuario pueda reabrir el banner y cambiar su elección.
+  var settingsLink = document.getElementById('cookie-settings-link');
+  if (settingsLink) {
+    settingsLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      showBanner();
+    });
+  }
+})();
+</script>

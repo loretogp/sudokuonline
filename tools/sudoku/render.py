@@ -26,6 +26,23 @@ MONTH_NAMES_ES = [
 ]
 
 
+def _consent_default_script():
+    # Google Consent Mode v2: must run before adsbygoogle.js/gtag.js load,
+    # so storage stays denied until the user answers the cookie banner.
+    return """
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>"""
+
+
 def _head_scripts():
     return f"""
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>
@@ -36,6 +53,22 @@ def _head_scripts():
       gtag('js', new Date());
       gtag('config', '{GA_MEASUREMENT_ID}');
     </script>"""
+
+
+def _cookie_banner(base):
+    return f"""  <div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">
+        Usamos cookies propias y de terceros (Google Analytics y Google AdSense) para analizar el uso del sitio y mostrar anuncios, incluyendo personalizados si lo aceptas. Puedes leer más en nuestra
+        <a href="{base}privacy.html">Política de Privacidad</a>.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="cookie-reject" type="button" class="cookie-btn cookie-btn-reject">Rechazar</button>
+        <button id="cookie-accept" type="button" class="cookie-btn cookie-btn-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="{base}js/cookie-consent.js"></script>"""
 
 
 def _nav(base, active_href):
@@ -56,6 +89,7 @@ def _footer(base):
       <p class="footer-brand">Sudoku Online</p>
       <nav class="footer-nav" aria-label="Enlaces del sitio">
         {links}
+        <a href="#" id="cookie-settings-link">Configurar cookies</a>
       </nav>
       <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
       <p class="footer-copy">&copy; {{year}} Sudoku Online (sudokuonline.cl)</p>
@@ -85,6 +119,7 @@ def render_shell(*, title, description, base, active_nav, canonical_path,
   <meta property="og:locale" content="es_CL">
   {css_links}
   <link rel="icon" type="image/x-icon" href="{base}assets/images/favicon.ico">
+  {_consent_default_script()}
   {_head_scripts()}
   {extra_head}
 </head>
@@ -101,6 +136,7 @@ def render_shell(*, title, description, base, active_nav, canonical_path,
 {body_html}
   </main>
 {footer}
+{_cookie_banner(base)}
 </body>
 </html>
 """

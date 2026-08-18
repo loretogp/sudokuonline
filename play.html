@@ -18,6 +18,18 @@
     <link rel="stylesheet" href="css/content.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1229284733731710" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC1LB2EF8"></script>
     <script>
@@ -87,10 +99,24 @@
         <a href="about.html">Nosotros</a>
         <a href="contact.html">Contacto</a>
         <a href="privacy.html">Privacidad</a>
+        <a href="#" id="cookie-settings-link">Configurar cookies</a>
       </nav>
       <p class="footer-note">Un sudoku nuevo cada día, en tres niveles de dificultad, generado y verificado automáticamente.</p>
       <p class="footer-copy">&copy; 2026 Sudoku Online (sudokuonline.cl)</p>
     </div>
   </footer>
+  <div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">
+        Usamos cookies propias y de terceros (Google Analytics y Google AdSense) para analizar el uso del sitio y mostrar anuncios, incluyendo personalizados si lo aceptas. Puedes leer más en nuestra
+        <a href="privacy.html">Política de Privacidad</a>.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="cookie-reject" type="button" class="cookie-btn cookie-btn-reject">Rechazar</button>
+        <button id="cookie-accept" type="button" class="cookie-btn cookie-btn-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/cookie-consent.js"></script>
 </body>
 </html>
